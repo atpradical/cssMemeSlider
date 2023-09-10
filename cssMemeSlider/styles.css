@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    background: #212121;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 125%;
+    line-height: 130%;
+    font-style: normal;
+    color: #FFF;
+}
+
+h1 {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    color: #FFF;
+}
+
+.container {
+    width: 90%;
+    max-width: 60vh;
+    margin: 1.3rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+input {
+    display: none;
+}
+
+.slider-block {
+    display: flex;
+    align-items: center;
+    width: calc(800% + 7rem);
+    gap: 1rem;
+    transition: .5s;
+}
+
+.slide {
+    width: calc((100% - 7rem) / 8);
+    scroll-snap-align: start;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.captions-buttons {
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.caption-block {
+    margin-top: 0.5rem;
+}
+
+.figure-caption {
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    visibility: hidden;
+}
+
+#slide-1:checked ~ .captions-buttons > .caption-block > #text-1,
+#slide-2:checked ~ .captions-buttons > .caption-block > #text-2,
+#slide-3:checked ~ .captions-buttons > .caption-block > #text-3,
+#slide-4:checked ~ .captions-buttons > .caption-block > #text-4,
+#slide-5:checked ~ .captions-buttons > .caption-block > #text-5 {
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+}
+
+.buttons-block {
+    display: flex;
+    background-color: #212121;
+}
+
+.button-item {
+    width: 1rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-item > span {
+    display: block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border: solid 0.1rem #2D9CDB;
+    background-color: #2D9CDB;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.button-item:hover {
+    cursor: pointer;
+}
+
+#slide-1:checked ~ .slider-block {
+    transform: translateX(0);
+}
+
+#slide-2:checked ~ .slider-block {
+    transform: translateX(calc(-12.5% * 1 - 1rem / 7));
+}
+
+#slide-3:checked ~ .slider-block {
+    transform: translateX(calc(-12.5% * 2 - 2rem / 7));
+}
+
+#slide-4:checked ~ .slider-block {
+    transform: translateX(calc(-12.5% * 3 - 3rem / 7));
+}
+
+#slide-5:checked ~ .slider-block {
+    transform: translateX(calc(-12.5% * 4 - 4rem / 7));
+}
+
+#slide-1:checked ~ .caption-buttons > .buttons-block > #button-1 > span,
+#slide-2:checked ~ .caption-buttons > .buttons-block > #button-2 > span,
+#slide-3:checked ~ .caption-buttons > .buttons-block > #button-3 > span,
+#slide-4:checked ~ .caption-buttons > .buttons-block > #button-4 > span,
+#slide-5:checked ~ .caption-buttons > .buttons-block > #button-5 > span {
+    border: solid 0.1rem #2D9CDB;
+    background-color: transparent;
+}
+
+#slide-1:checked ~ .caption-buttons > .buttons-block > #button-1:hover > span,
+#slide-2:checked ~ .caption-buttons > .buttons-block > #button-2:hover > span,
+#slide-3:checked ~ .caption-buttons > .buttons-block > #button-3:hover > span,
+#slide-4:checked ~ .caption-buttons > .buttons-block > #button-4:hover > span,
+#slide-5:checked ~ .caption-buttons > .buttons-block > #button-5:hover > span{
+    border: solid 0.1rem #FFF;
+}
+
+#slide-1:checked ~ .caption-buttons > .buttons-block > #button-1:active > span,
+#slide-2:checked ~ .caption-buttons > .buttons-block > #button-2:active > span,
+#slide-3:checked ~ .caption-buttons > .buttons-block > #button-3:active > span,
+#slide-4:checked ~ .caption-buttons > .buttons-block > #button-4:active > span,
+#slide-5:checked ~ .caption-buttons> .buttons-block > #button-5:active > span {
+    border: solid 0.1rem #AAA;
+}
+
+.button-item:hover > span {
+    border: solid 0.1rem #FFF;
+    background-color: #FFF;
+}
+
+.button-item:active > span {
+    border: solid 0.1rem #AAA;
+    background-color: #AAA;
+}
+
+.footer {
+    margin: 2rem auto 0;
+    font-size: 0.7rem;
+    line-height: 130%;
+    text-align: center;
+    color: #555;
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .figure-caption {
+        font-size: 0.8rem;
+        line-height: 140%;
+    }
+
+    .caption-buttons {
+        margin-top: 0.5rem;
+        flex-direction: column;
+        gap: 2%;
+    }
+
+    .buttons-block {
+        order: -1;
+        align-self: center;
+    }
+
+    .button-item {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <title>cssMemeSlider</title>
+</head>
+<body>
+<header class="header"><h1 class="header__text">CSS Meme Slider</h1></header>
+<main class="container">
+    <input type="radio" name="slide" id="slide-1" checked>
+    <input type="radio" name="slide" id="slide-2">
+    <input type="radio" name="slide" id="slide-3">
+    <input type="radio" name="slide" id="slide-4">
+    <input type="radio" name="slide" id="slide-5">
+    <div class="slider-block">
+        <figure class="slide" id="image-1"><img src="./assets/images/m1.webp"></figure>
+        <figure class="slide" id="image-2"><img src="./assets/images/m2.webp"></figure>
+        <figure class="slide" id="image-3"><img src="./assets/images/m3.webp"></figure>
+        <figure class="slide" id="image-4"><img src="./assets/images/m4.webp"></figure>
+        <figure class="slide" id="image-5"><img src="./assets/images/m5.webp"></figure>
+    </div>
+    <div class="captions-buttons">
+        <div class="caption-block">
+            <div class="figure-caption" id="text-1">Release the kraken!</div>
+            <div class="figure-caption" id="text-2">What do you mean?</div>
+            <div class="figure-caption" id="text-3">You can look, but you can't touch! </div>
+            <div class="figure-caption" id="text-4">Use your head, man.</div>
+            <div class="figure-caption" id="text-5">Measure 7 times and cut once</div>
+        </div>
+        <div class="buttons-block">
+            <label for="slide-1" id="button-1" class="button-item"><span> </span></label>
+            <label for="slide-2" id="button-2" class="button-item"><span> </span></label>
+            <label for="slide-3" id="button-3" class="button-item"><span> </span></label>
+            <label for="slide-4" id="button-4" class="button-item"><span> </span></label>
+            <label for="slide-5" id="button-5" class="button-item"><span> </span></label>
+        </div>
+    </div>
+</main>
+<footer class="footer"> © 2023 Ivan Dolgikh</footer>
+</body>
+</html>
